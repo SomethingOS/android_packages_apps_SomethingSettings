@@ -23,4 +23,15 @@
     
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="statusbar_category"
+        android:title="@string/statusbar_category_title">
+
+        <!-- Statusbar Settings -->
+        <Preference
+            android:key="statusbar_settings"
+            android:title="@string/status_bar_title"
+            android:fragment="org.somethingos.somethingsettings.fragments.ui.StatusBarSettings" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
