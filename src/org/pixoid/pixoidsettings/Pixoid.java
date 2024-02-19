@@ -32,12 +32,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public abstract class Pixoid extends SettingsPreferenceFragment {
+public class Pixoid extends SettingsPreferenceFragment {
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        return false;
+    }
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.pixoid);
+    }
+
+    @Override
+    public int getMetricsCategory() {
+        return 0;
     }
 
     /**

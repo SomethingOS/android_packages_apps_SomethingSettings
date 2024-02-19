@@ -5,4 +5,9 @@
     <!-- Pixoid -->
     <string name="pixoid_dashboard_title">Pixoid</string>
 
+    <!-- Play Integrity -->
+    <string name="play_integrity_title">Play Integrity</string>
+    <string name="play_integrity_summary">Adjust the Play Integrity settings</string>
+    <string name="play_integrity_update_title">Update Play Integrity Patch</string>
+    <string name="play_integrity_update_summary">Download and apply latest fingerprint to spoof</string>
 </resources>
