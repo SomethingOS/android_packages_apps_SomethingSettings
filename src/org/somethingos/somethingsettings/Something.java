@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.pixoid.pixoidsettings;
+package org.somethingos.somethingsettings;
 
 import android.app.Activity;
 import android.content.Context;
@@ -32,17 +32,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class Pixoid extends SettingsPreferenceFragment {
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        return false;
-    }
+public class Something extends SettingsPreferenceFragment {
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.pixoid);
+        addPreferencesFromResource(R.xml.something);
     }
 
     @Override
@@ -55,5 +50,5 @@ public class Pixoid extends SettingsPreferenceFragment {
      */
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.pixoid);
+            new BaseSearchIndexProvider(R.xml.something);
 }

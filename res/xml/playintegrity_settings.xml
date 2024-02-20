@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2014-2022 BlissRoms Project
-     SPDX-License-Identifier: Apache-2.0
--->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/play_integrity_title">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/something_play_integrity_dashboard_title">
 
-    <Preference
-        android:key="play_integrity_update"
-        android:title="play_integrity_update_title"
-        android:summary="Update Spoofing for Play Services" />
+    <PreferenceCategory
+        android:key="playtools_category"
+        android:title="@string/playtools_category_title">
 
-    <Preference
-        android:key="play_integrity_killgms"
-        android:title="Kill Play Services"
-        android:summary="Kill Google Play Services" />
+        <Preference
+            android:key="play_integrity_update"
+            android:title="@string/play_integrity_update_title"
+            android:summary="@string/play_integrity_update_summary" />
+
+        <Preference
+            android:key="play_integrity_killgms"
+            android:title="@string/play_integrity_killgms_title"
+            android:summary="@string/play_integrity_killgms_summary" />
+    
+    </PreferenceCategory>
 
 </PreferenceScreen>

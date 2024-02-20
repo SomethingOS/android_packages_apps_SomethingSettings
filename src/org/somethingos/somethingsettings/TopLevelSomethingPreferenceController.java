@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 AOSP-Krypton Project
+ * Copyright (C) 2014-2021 The BlissRoms Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,22 @@
  * limitations under the License.
  */
 
-package org.pixoid.pixoidsettings.fragments
+package org.somethingos.somethingsettings;
 
-import androidx.preference.Preference
+import android.content.Context;
 
-import com.android.settings.dashboard.DashboardFragment
+import com.android.settings.R;
+import com.android.settings.core.BasePreferenceController;
 
-abstract class PixoidDashboardFragment: DashboardFragment() {
+public class TopLevelSomethingPreferenceController extends BasePreferenceController {
 
-    override fun onDisplayPreferenceDialog(preference: Preference) {
-        super.onDisplayPreferenceDialog(preference)
+    public TopLevelSomethingPreferenceController(Context context,
+            String preferenceKey) {
+        super(context, preferenceKey);
     }
 
-    companion object {
-        const val REQUEST_KEY = "PixoidDashboardFragment#RequestKey"
+    @Override
+    public int getAvailabilityStatus() {
+        return AVAILABLE;
     }
 }

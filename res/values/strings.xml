@@ -2,12 +2,16 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Pixoid -->
-    <string name="pixoid_dashboard_title">Pixoid</string>
+    <!-- SomethingOS Settings -->
+    <string name="somethingos_dashboard_title">SomethingOS Settings</string>
 
     <!-- Play Integrity -->
-    <string name="play_integrity_title">Play Integrity</string>
+    <string name="something_play_integrity_dashboard_title">Play Integrity</string>
     <string name="play_integrity_summary">Adjust the Play Integrity settings</string>
     <string name="play_integrity_update_title">Update Play Integrity Patch</string>
     <string name="play_integrity_update_summary">Download and apply latest fingerprint to spoof</string>
+    <string name="play_integrity_killgms_title">Kill Play Services</string>
+    <string name="play_integrity_killgms_summary">Kill Google Play Services</string>
+    <string name="security_category_title">Security</string>
+    <string name="playtools_category_title">Tools</string>
 </resources>

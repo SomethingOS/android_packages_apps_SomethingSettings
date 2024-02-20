@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/somethingos_dashboard_title">
+
+    <!-- Security -->
+    <PreferenceCategory
+        android:key="security_category"
+        android:title="@string/security_category_title">
+
+            <Preference
+                android:key="pintegrity_category"
+                android:title="@string/something_play_integrity_dashboard_title"
+                android:fragment="org.somethingos.somethingsettings.fragments.playintegrity.PlayIntegrity"
+                android:icon="@drawable/ic_playintegrity" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
