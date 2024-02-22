@@ -6,8 +6,8 @@
 
     <!-- Security -->
     <PreferenceCategory
-        android:key="security_category"
-        android:title="@string/security_category_title">
+        android:key="spoofing_category"
+        android:title="@string/spoofing_category_title">
 
             <Preference
                 android:key="pintegrity_category"

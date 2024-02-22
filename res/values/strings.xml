@@ -12,6 +12,6 @@
     <string name="play_integrity_update_summary">Download and apply latest fingerprint to spoof</string>
     <string name="play_integrity_killgms_title">Kill Play Services</string>
     <string name="play_integrity_killgms_summary">Kill Google Play Services</string>
-    <string name="security_category_title">Security</string>
+    <string name="spoofing_category_title">Spoof</string>
     <string name="playtools_category_title">Tools</string>
 </resources>
