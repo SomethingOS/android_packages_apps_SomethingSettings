@@ -5,20 +5,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/something_play_integrity_dashboard_title">
 
-    <PreferenceCategory
-        android:key="playtools_category"
-        android:title="@string/playtools_category_title">
+    <com.android.settingslib.widget.IllustrationPreference
+        android:key="play_illustration"
+        settings:lottie_rawRes="@raw/play_illustration"
+        android:order="-1001" />
 
-        <Preference
-            android:key="play_integrity_update"
-            android:title="@string/play_integrity_update_title"
-            android:summary="@string/play_integrity_update_summary" />
+    <Preference
+        android:key="play_integrity_update"
+        android:title="@string/play_integrity_update_title"
+        android:summary="@string/play_integrity_update_summary" />
 
-        <Preference
-            android:key="play_integrity_killgms"
-            android:title="@string/play_integrity_killgms_title"
-            android:summary="@string/play_integrity_killgms_summary" />
-    
-    </PreferenceCategory>
+    <Preference
+        android:key="play_integrity_killgms"
+        android:title="@string/play_integrity_killgms_title"
+        android:summary="@string/play_integrity_killgms_summary" />
 
 </PreferenceScreen>

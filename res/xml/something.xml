@@ -4,17 +4,22 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/somethingos_dashboard_title">
 
-    <!-- Security -->
-    <PreferenceCategory
+    <com.android.settingslib.widget.IllustrationPreference
+        android:key="something_illustration"
+        settings:lottie_rawRes="@raw/something_illustration"
+        android:order="-1001" />
+
+    <Preference
+        android:key="pintegrity_category"
+        android:title="@string/something_play_integrity_dashboard_title"
+        android:fragment="org.somethingos.somethingsettings.fragments.playintegrity.PlayIntegrity"
+        android:icon="@drawable/ic_playintegrity" />
+
+    <Preference
         android:key="spoofing_category"
-        android:title="@string/spoofing_category_title">
+        android:title="@string/something_spoofing_dashboard_title"
+        android:fragment="org.somethingos.somethingsettings.fragments.spoofing.Spoofing"
+        android:icon="@drawable/ic_spoofing" />
 
-            <Preference
-                android:key="pintegrity_category"
-                android:title="@string/something_play_integrity_dashboard_title"
-                android:fragment="org.somethingos.somethingsettings.fragments.playintegrity.PlayIntegrity"
-                android:icon="@drawable/ic_playintegrity" />
-
-    </PreferenceCategory>
 
 </PreferenceScreen>
