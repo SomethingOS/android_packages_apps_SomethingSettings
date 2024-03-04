@@ -5,16 +5,26 @@
     <!-- SomethingOS Settings -->
     <string name="somethingos_dashboard_title">SomethingOS Settings</string>
 
+    <!-- Play Integrity -->
     <string name="something_play_integrity_dashboard_title">Play Integrity</string>
-    <string name="something_spoofing_dashboard_title">Spoofing</string>
     <string name="play_integrity_summary">Adjust the Play Integrity settings</string>
     <string name="play_integrity_update_title">Update Play Integrity Patch</string>
     <string name="play_integrity_update_summary">Download and apply latest fingerprint to spoof</string>
     <string name="play_integrity_killgms_title">Kill Play Services</string>
     <string name="play_integrity_killgms_summary">Kill Google Play Services</string>
+
+    <!-- Spoofing -->
+    <string name="something_spoofing_dashboard_title">Spoofing</string>
     <string name="google_category_title">Google</string>
     <string name="spoof_gphotos">Google Photos Unlimited</string>
     <string name="spoof_gphotos_summary">Spoof device as a Pixel XL for unlimited Google Photos backup</string>
     <string name="spoof_gapps">Spoof Google Apps</string>
     <string name="spoof_gapps_summary">Spoof Google Apps to have Pixel exclusives features</string>
+
+    <!-- UI -->
+    <string name="lockscreen_category_title">Lockscreen</string>
+    <string name="something_ui_dashboard_title">Interface</string>
+    <string name="hide_qs_on_secure_lockscreen_title">Hide QS on secure lockscreen</string>
+    <string name="hide_qs_on_secure_lockscreen_summary">Hide Quick Settings while device is locked</string>
+
 </resources>

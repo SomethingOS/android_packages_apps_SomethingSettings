@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/something_play_integrity_dashboard_title">
+
+    <com.android.settingslib.widget.IllustrationPreference
+        android:key="custom_illustration"
+        settings:lottie_rawRes="@raw/custom_illustration"
+        android:order="-1001" />
+
+    <PreferenceCategory
+        android:key="lockscreen_category"
+        android:title="@string/lockscreen_category_title">
+
+        <SwitchPreference
+            android:key="secure_lockscreen_qs_disabled"
+            android:title="@string/hide_qs_on_secure_lockscreen_title"
+            android:summary="@string/hide_qs_on_secure_lockscreen_summary"/>
+    
+    </PreferenceCategory>
+
+</PreferenceScreen>

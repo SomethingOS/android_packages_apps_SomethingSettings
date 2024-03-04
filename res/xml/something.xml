@@ -21,5 +21,11 @@
         android:fragment="org.somethingos.somethingsettings.fragments.spoofing.Spoofing"
         android:icon="@drawable/ic_spoofing" />
 
+    <Preference
+        android:key="ui_category"
+        android:title="@string/something_ui_dashboard_title"
+        android:fragment="org.somethingos.somethingsettings.fragments.ui.UI"
+        android:icon="@drawable/ic_ui" />
+
 
 </PreferenceScreen>
