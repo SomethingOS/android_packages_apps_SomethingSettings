@@ -50,6 +50,9 @@ public class Spoofing extends SettingsPreferenceFragment implements Preference.O
 
         SwitchPreference spoofGphotosPreference = (SwitchPreference) findPreference("spoof_gphotos");
         if (spoofGphotosPreference != null) {
+            String gphotosProp = SystemProperties.get("persist.sys.somethingos.gphotos", "false");
+            spoofGphotosPreference.setChecked(!gphotosProp.equals("false"));
+
             spoofGphotosPreference.setOnPreferenceChangeListener((preference, newValue) -> {
                 if ((Boolean) newValue) {
                     SystemProperties.set("persist.sys.somethingos.gphotos", "true");
@@ -62,6 +65,9 @@ public class Spoofing extends SettingsPreferenceFragment implements Preference.O
 
         SwitchPreference spoofGoogleAppsPreference = (SwitchPreference) findPreference("spoof_google_apps");
         if (spoofGoogleAppsPreference != null) {
+            String gappsProp = SystemProperties.get("persist.sys.somethingos.gapps", "false");
+            spoofGoogleAppsPreference.setChecked(!gappsProp.equals("false"));
+
             spoofGoogleAppsPreference.setOnPreferenceChangeListener((preference, newValue) -> {
                 if ((Boolean) newValue) {
                     SystemProperties.set("persist.sys.somethingos.gapps", "true");
