@@ -55,14 +55,6 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
                 return true;
             });
         }
-
-        Preference killGmsPreference = findPreference("play_integrity_killgms");
-        if (killGmsPreference != null) {
-            killGmsPreference.setOnPreferenceClickListener(preference -> {
-                killGmsProcess();
-                return true;
-            });
-        }
     }
 
     public void setPropertiesFromUrl() {
@@ -93,7 +85,7 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
                     }
                     reader.close();
                     SystemProperties.set("persist.sys.somethingos.gms.list", keysBuilder.toString());
-                    message = "Applied properties, kill Google Play Services to apply changes.";
+                    message = "Applied properties, you should pass Play Integrity.";
                 } catch (Exception e) {
                     e.printStackTrace();
                     message = "Failed to download spoofing properties.";
@@ -103,6 +95,7 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
 
             @Override
             protected void onPostExecute(String message) {
+                killGmsProcess();
                 Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
             }
         }.execute();
@@ -121,20 +114,21 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
                             Method forceStopPackage = am.getClass().getDeclaredMethod("forceStopPackage", String.class);
                             forceStopPackage.setAccessible(true);
                             forceStopPackage.invoke(am, "com.google.android.gms");
-                            message = "Killed Google Play Services.";
                             break;
                         }
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    message = "Failed to kill Google Play Services.";
+                    message = "Failed to kill Google Play Services. Please kill them manually.";
                 }
                 return message;
             }
 
             @Override
             protected void onPostExecute(String message) {
-                Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+                if (!message.isEmpty()) {
+                    Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+                }
             }
         }.execute();
     }
