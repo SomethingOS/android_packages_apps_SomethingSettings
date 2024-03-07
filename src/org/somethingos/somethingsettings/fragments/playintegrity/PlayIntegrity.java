@@ -55,6 +55,21 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
                 return true;
             });
         }
+
+        PreferenceCategory fingerprintCategory = findPreference("play_fingeprint_category");
+        String keysList = SystemProperties.get("persist.sys.somethingos.gms.list");
+        String[] keys = keysList.split("\\+");
+
+        for (String key : keys) {
+            String value = SystemProperties.get("persist.sys.somethingos.gms." + key);
+            Preference preference = new Preference(getPreferenceManager().getContext());
+            preference.setKey(key);
+            preference.setTitle(key);
+            preference.setSummary(value);
+            preference.setSelectable(false);
+            fingerprintCategory.addPreference(preference);
+        }
+        
     }
 
     public void setPropertiesFromUrl() {

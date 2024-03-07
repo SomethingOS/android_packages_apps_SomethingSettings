@@ -10,14 +10,22 @@
         settings:lottie_rawRes="@raw/play_illustration"
         android:order="-1001" />
 
-    <Preference
-        android:key="play_integrity_update"
-        android:title="@string/play_integrity_update_title"
-        android:summary="@string/play_integrity_update_summary" />
+    <PreferenceCategory
+        android:key="play_update_category"
+        android:title="@string/play_update_title">
 
-    <Preference
-        android:key="play_integrity_killgms"
-        android:title="@string/play_integrity_killgms_title"
-        android:summary="@string/play_integrity_killgms_summary" />
+        <Preference
+            android:icon="@drawable/ic_update"
+            android:key="play_integrity_update"
+            android:title="@string/play_integrity_update_title"
+            android:summary="@string/play_integrity_update_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="play_fingeprint_category"
+        android:title="@string/play_fingerprint">
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
