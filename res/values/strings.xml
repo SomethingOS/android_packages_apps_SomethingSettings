@@ -27,4 +27,18 @@
     <string name="hide_qs_on_secure_lockscreen_title">Hide QS on secure lockscreen</string>
     <string name="hide_qs_on_secure_lockscreen_summary">Hide Quick Settings while device is locked</string>
 
+    <!-- About Something -->
+    <string name="about_something_title">About</string>
+    <string name="about_something_social">Social</string>
+    <string name="something_website_title">Website</string>
+    <string name="something_website_summary">Visit our website</string>
+    <string name="something_telegram_title">Telegram</string>
+    <string name="something_telegram_summary">Join our Telegram group</string>
+    <string name="something_twitter_title">Twitter</string>
+    <string name="something_twitter_summary">Follow us on Twitter</string>
+    <string name="something_buymeacoffee_title">Buy me a coffee</string>
+    <string name="something_buymeacoffee_summary">Support the developer</string>
+    <string name="early_donators">Early Donators</string>
+    <string name="SomethingTeams">SomethingOS Team</string>
+
 </resources>

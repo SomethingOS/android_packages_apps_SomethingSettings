@@ -27,5 +27,11 @@
         android:fragment="org.somethingos.somethingsettings.fragments.ui.UI"
         android:icon="@drawable/ic_ui" />
 
+    <Preference
+        android:key="about_something"
+        android:title="@string/about_something_title"
+        android:fragment="org.somethingos.somethingsettings.fragments.aboutsomething.AboutSomething"
+        android:icon="@drawable/ic_aboutsomething" />
+
 
 </PreferenceScreen>

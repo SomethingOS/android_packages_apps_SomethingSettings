@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/about_something_title">
+
+    <PreferenceCategory
+        android:key="social_category"
+        android:title="@string/about_something_social">
+
+        <Preference
+            android:icon="@drawable/ic_website"
+            android:key="something_website"
+            android:title="@string/something_website_title"
+            android:summary="@string/something_website_summary" />
+
+        <Preference
+            android:icon="@drawable/ic_telegram"
+            android:key="something_telegram"
+            android:title="@string/something_telegram_title"
+            android:summary="@string/something_telegram_summary" />
+
+        <Preference
+            android:icon="@drawable/ic_twitter"
+            android:key="something_twitter"
+            android:title="@string/something_twitter_title"
+            android:summary="@string/something_twitter_summary" />
+
+        <Preference
+            android:icon="@drawable/ic_donate"
+            android:key="something_donate"
+            android:title="@string/something_buymeacoffee_title"
+            android:summary="@string/something_buymeacoffee_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="something_team"
+        android:title="@string/SomethingTeams">
+
+        <!-- We definitly needs to find a cleaner way than hardcoding donators-->
+        <Preference
+            android:title="Dylan AKPINAR"
+            android:summary="Founder &amp; Lead Developer"
+            android:key="dylanakp"
+        />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="something_early_donators"
+        android:title="@string/early_donators">
+
+        <!-- We definitly needs to find a cleaner way than hardcoding donators-->
+        <Preference
+            android:title="Kevin Pirnie"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
