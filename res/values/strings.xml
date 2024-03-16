@@ -20,6 +20,8 @@
     <string name="spoof_gphotos_summary">Spoof device as a Pixel XL for unlimited Google Photos backup</string>
     <string name="spoof_gapps">Spoof Google Apps</string>
     <string name="spoof_gapps_summary">Spoof Google Apps to have Pixel exclusives features</string>
+    <string name="spoof_games">Spoof Games</string>
+    <string name="spoof_games_summary">Spoof device according to partnerships to unlock higher FPS in some games</string>
 
     <!-- UI -->
     <string name="lockscreen_category_title">Lockscreen</string>

@@ -55,5 +55,20 @@ public class Spoofing extends SettingsPreferenceFragment implements Preference.O
                 return true;
             });
         }
+
+        SwitchPreference spoofGamesPreference = (SwitchPreference) findPreference("spoof_games");
+        if (spoofGamesPreference != null) {
+            String gamesProp = SystemProperties.get("persist.sys.somethingos.spoofgames", "false");
+            spoofGamesPreference.setChecked(gamesProp.equals("true"));
+
+            spoofGamesPreference.setOnPreferenceChangeListener((preference, newValue) -> {
+                if ((Boolean) newValue) {
+                    SystemProperties.set("persist.sys.somethingos.spoofgames", "true");
+                } else {
+                    SystemProperties.set("persist.sys.somethingos.spoofgames", "false");
+                }
+                return true;
+            });
+        }
     }
 }
