@@ -38,9 +38,12 @@
     <string name="something_telegram_summary">Join our Telegram group</string>
     <string name="something_twitter_title">Twitter</string>
     <string name="something_twitter_summary">Follow us on Twitter</string>
-    <string name="something_buymeacoffee_title">Buy me a coffee</string>
-    <string name="something_buymeacoffee_summary">Support the developer</string>
+    <string name="something_buymeacoffee_title">BuyMeACoffee</string>
+    <string name="something_buymeacoffee_summary">Support the developer with BMC</string>
+    <string name="something_paypal_title">Paypal</string>
+    <string name="something_paypal_summary">Support the developer with PayPal</string>
     <string name="early_donators">Early Donators</string>
     <string name="SomethingTeams">SomethingOS Team</string>
+    <string name="something_credits">Credits</string>
 
 </resources>

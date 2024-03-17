@@ -7,12 +7,40 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceCategory;
 import android.os.Bundle;
 
-
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 
 public class AboutSomething extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+
+    private static class Credit {
+        String title;
+        String description;
+        String link;
+
+        Credit(String title, String description, String link) {
+            this.title = title;
+            this.description = description;
+            this.link = link;
+        }
+    };
+
+    //List of early donators
+    private static final String[] earlyDonators = {
+        "Kevin Pirnie"
+    };
+
+    //List of credits
+    private static final Credit[] credits = {
+        new Credit("Google", "Keep improving Android", "https://android.com"),
+        new Credit("ParanoidAndroid Team", "SomethingOS is based on AOSPA", "https://paranoidandroid.co"),
+        new Credit("CrDroid", "Some settings ideas and code", "https://crdroid.net"),
+        new Credit("Lawnchair Team", "They made Lawnchair, the default launcher in SomethingOS", "https://lawnchair.app"),
+        new Credit("Goooler", "The Lawnchair Fork we use", "https://github.com/Goooler"),
+        new Credit("arter97", "The lawnchair vendor we forked", "https://github.com/arter97"),
+
+        new Credit("You", "For using SomethingOS", "https://www.somethingos.com/")
+    };
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -30,41 +58,45 @@ public class AboutSomething extends SettingsPreferenceFragment implements Prefer
 
         getActivity().setTitle(R.string.about_something_title);
 
-        findPreference("something_website").setOnPreferenceClickListener(preference -> openWebsite());
-        findPreference("something_telegram").setOnPreferenceClickListener(preference -> openTelegram());
-        findPreference("something_twitter").setOnPreferenceClickListener(preference -> openTwitter());
-        findPreference("something_donate").setOnPreferenceClickListener(preference -> openDonate());
-        findPreference("dylanakp").setOnPreferenceClickListener(preference -> openDylanAkp());
+        setUrlPreferenceClickListener("something_website", "https://www.somethingos.com/");
+        setUrlPreferenceClickListener("something_telegram", "http://www.telegram.me/SomethingOS");
+        setUrlPreferenceClickListener("something_twitter", "http://www.twitter.com/SomethingOS");
+        setUrlPreferenceClickListener("something_donate", "http://www.buymeacoffee.com/SomethingOS");
+        setUrlPreferenceClickListener("something_donate2", "https://www.somethingos.com/donate");
+        setUrlPreferenceClickListener("dylanakp", "http://www.github.com/DylanAkp");
+
+        // Set the early donators
+        PreferenceCategory earlyDonatorsCategory = findPreference("something_early_donators");
+        for (String donator : earlyDonators) {
+            Preference donatorPreference = new Preference(getContext());
+            donatorPreference.setTitle(donator);
+            earlyDonatorsCategory.addPreference(donatorPreference);
+        }
+
+        // Set the credits
+        PreferenceCategory creditsCategory = findPreference("something_credits");
+        for (Credit credit : credits) {
+            Preference creditPreference = new Preference(getContext());
+            creditPreference.setTitle(credit.title);
+            creditPreference.setSummary(credit.description);
+            creditPreference.setOnPreferenceClickListener(preference -> {
+                return openUrl(credit.link);
+            });
+            creditsCategory.addPreference(creditPreference);
+        }
     }
 
-    private boolean openWebsite() {
-        openUrl("https://www.somethingos.com/");
-        return true;
+    private void setUrlPreferenceClickListener(String preferenceKey, String url) {
+        findPreference(preferenceKey).setOnPreferenceClickListener(preference -> {
+            openUrl(url);
+            return true;
+        });
     }
 
-    private boolean openTelegram() {
-        openUrl("http://www.telegram.me/SomethingOS");
-        return true;
-    }
-
-    private boolean openTwitter() {
-        openUrl("http://www.twitter.com/SomethingOS");
-        return true;
-    }
-
-    private boolean openDonate() {
-        openUrl("http://www.buymeacoffee.com/SomethingOS");
-        return true;
-    }
-
-    private boolean openDylanAkp() {
-        openUrl("http://www.github.com/DylanAkp");
-        return true;
-    }
-
-    private void openUrl(String url) {
+    private boolean openUrl(String url) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
         startActivity(intent);
+        return true;
     }
 }

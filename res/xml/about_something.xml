@@ -33,6 +33,12 @@
             android:title="@string/something_buymeacoffee_title"
             android:summary="@string/something_buymeacoffee_summary" />
 
+        <Preference
+            android:icon="@drawable/ic_donate2"
+            android:key="something_donate2"
+            android:title="@string/something_paypal_title"
+            android:summary="@string/something_paypal_summary" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -51,9 +57,12 @@
         android:key="something_early_donators"
         android:title="@string/early_donators">
 
-        <!-- We definitly needs to find a cleaner way than hardcoding donators-->
-        <Preference
-            android:title="Kevin Pirnie"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="something_credits"
+        android:title="@string/something_credits">
 
     </PreferenceCategory>
 
