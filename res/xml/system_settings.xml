@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/something_system_dashboard_title">
+
+    <com.android.settingslib.widget.IllustrationPreference
+        android:key="system_illustration"
+        settings:lottie_rawRes="@raw/somesystem_illustration"
+        android:order="-1001" />
+
+
+    <PreferenceCategory
+        android:key="misc_category"
+        android:title="@string/misc_category_title">
+
+        <SwitchPreference
+            android:key="enable_adblock"
+            android:title="@string/enable_adblock_title"
+            android:summary="@string/enable_adblock_summary"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

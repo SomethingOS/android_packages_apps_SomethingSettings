@@ -3,6 +3,8 @@ package org.somethingos.somethingsettings.fragments.ui;
 import android.content.Context;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.content.SharedPreferences;
+import androidx.preference.PreferenceManager;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
@@ -47,6 +49,39 @@ public class UI extends SettingsPreferenceFragment implements Preference.OnPrefe
                     value,
                     android.os.UserHandle.USER_CURRENT
                 );
+                return true;
+            });
+        }
+
+        SwitchPreference enableAdblock = (SwitchPreference) findPreference("enable_adblock");
+        if (enableAdblock != null) {
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext().getApplicationContext());
+            boolean enableAdblockValue = prefs.getBoolean("enable_adblock", false);
+            enableAdblock.setChecked(enableAdblockValue);
+
+            enableAdblock.setOnPreferenceChangeListener((preference, newValue) -> {
+                boolean isChecked = (Boolean) newValue;
+                prefs.edit().putBoolean("enable_adblock", isChecked).apply();
+
+                if (isChecked) {
+                    Settings.Global.putString(
+                        getContext().getContentResolver(),
+                        Settings.Global.PRIVATE_DNS_MODE,
+                        "hostname"
+                    );
+                    Settings.Global.putString(
+                        getContext().getContentResolver(),
+                        Settings.Global.PRIVATE_DNS_SPECIFIER,
+                        "dns.adguard.com"
+                    );
+                } else {
+                    Settings.Global.putString(
+                        getContext().getContentResolver(),
+                        Settings.Global.PRIVATE_DNS_MODE,
+                        "off"
+                    );
+                }
+
                 return true;
             });
         }

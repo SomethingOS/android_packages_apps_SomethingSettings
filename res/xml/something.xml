@@ -28,6 +28,12 @@
         android:icon="@drawable/ic_ui" />
 
     <Preference
+        android:key="system_category"
+        android:title="@string/something_system_dashboard_title"
+        android:fragment="org.somethingos.somethingsettings.fragments.system.System"
+        android:icon="@drawable/ic_somesystem" />
+
+    <Preference
         android:key="about_something"
         android:title="@string/about_something_title"
         android:fragment="org.somethingos.somethingsettings.fragments.aboutsomething.AboutSomething"

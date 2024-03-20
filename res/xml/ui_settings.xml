@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:title="@string/something_play_integrity_dashboard_title">
+    android:title="@string/something_ui_dashboard_title">
 
     <com.android.settingslib.widget.IllustrationPreference
         android:key="custom_illustration"
@@ -18,7 +18,7 @@
             android:key="secure_lockscreen_qs_disabled"
             android:title="@string/hide_qs_on_secure_lockscreen_title"
             android:summary="@string/hide_qs_on_secure_lockscreen_summary"/>
-    
+
     </PreferenceCategory>
 
 </PreferenceScreen>

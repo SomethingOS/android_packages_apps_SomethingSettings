@@ -62,7 +62,7 @@ public class AboutSomething extends SettingsPreferenceFragment implements Prefer
         setUrlPreferenceClickListener("something_telegram", "http://www.telegram.me/SomethingOS");
         setUrlPreferenceClickListener("something_twitter", "http://www.twitter.com/SomethingOS");
         setUrlPreferenceClickListener("something_donate", "http://www.buymeacoffee.com/SomethingOS");
-        setUrlPreferenceClickListener("something_donate2", "https://www.somethingos.com/donate");
+        setUrlPreferenceClickListener("something_donate2", "https://www.somethingos.com/paypal");
         setUrlPreferenceClickListener("dylanakp", "http://www.github.com/DylanAkp");
 
         // Set the early donators
