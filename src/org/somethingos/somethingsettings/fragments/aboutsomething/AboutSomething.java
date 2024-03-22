@@ -27,18 +27,30 @@ public class AboutSomething extends SettingsPreferenceFragment implements Prefer
 
     //List of early donators
     private static final String[] earlyDonators = {
-        "Kevin Pirnie"
+        "Kevin Pirnie",
+        "Sehmee2",
+	"DigiGoon",
+	"Léo Chatron",
+	"Eliacim"
+    };
+
+    private static final Credit[] somethingOSTeam = {
+        new Credit("Dylan AKPINAR", "Founder and Lead Developer", "http://www.github.com/DylanAkp")
     };
 
     //List of credits
     private static final Credit[] credits = {
         new Credit("Google", "Keep improving Android", "https://android.com"),
         new Credit("ParanoidAndroid Team", "SomethingOS is based on AOSPA", "https://paranoidandroid.co"),
-        new Credit("CrDroid", "Some settings ideas and code", "https://crdroid.net"),
+        new Credit("LineageOS Team", "Updater and much more", "https://lineageos.org"),
+        new Credit("CrDroid", "Some ideas and code", "https://crdroid.net"),
         new Credit("Lawnchair Team", "They made Lawnchair, the default launcher in SomethingOS", "https://lawnchair.app"),
-        new Credit("Goooler", "The Lawnchair Fork we use", "https://github.com/Goooler"),
-        new Credit("arter97", "The lawnchair vendor we forked", "https://github.com/arter97"),
-
+        new Credit("That Josh Guy", "His amazing Android Wallpaper", "https://thatjoshguy.me/"),
+        new Credit("HESEINBERG", "His help on sources", "https://github.com/janakniraula"),
+        new Credit("z-huang", "for Innertune", "https://github.com/z-huang/InnerTune"),
+        new Credit("colorata", "for WallMan", "https://gitlab.com/colorata/wallman"),
+        new Credit("zhanghai", "for MaterialFiles", "https://github.com/zhanghai/MaterialFiles"),
+        new Credit("And many more", "Check commit authors on Github", "https://github.com/SomethingOS"),
         new Credit("You", "For using SomethingOS", "https://www.somethingos.com/")
     };
 
@@ -63,7 +75,6 @@ public class AboutSomething extends SettingsPreferenceFragment implements Prefer
         setUrlPreferenceClickListener("something_twitter", "http://www.twitter.com/SomethingOS");
         setUrlPreferenceClickListener("something_donate", "http://www.buymeacoffee.com/SomethingOS");
         setUrlPreferenceClickListener("something_donate2", "https://www.somethingos.com/paypal");
-        setUrlPreferenceClickListener("dylanakp", "http://www.github.com/DylanAkp");
 
         // Set the early donators
         PreferenceCategory earlyDonatorsCategory = findPreference("something_early_donators");
@@ -71,6 +82,18 @@ public class AboutSomething extends SettingsPreferenceFragment implements Prefer
             Preference donatorPreference = new Preference(getContext());
             donatorPreference.setTitle(donator);
             earlyDonatorsCategory.addPreference(donatorPreference);
+        }
+
+        // Set the SomethingOS team
+        PreferenceCategory somethingTeamCategory = findPreference("something_team");
+        for (Credit teamMember : somethingOSTeam) {
+            Preference teamMemberPreference = new Preference(getContext());
+            teamMemberPreference.setTitle(teamMember.title);
+            teamMemberPreference.setSummary(teamMember.description);
+            teamMemberPreference.setOnPreferenceClickListener(preference -> {
+                return openUrl(teamMember.link);
+            });
+            somethingTeamCategory.addPreference(teamMemberPreference);
         }
 
         // Set the credits

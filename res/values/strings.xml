@@ -50,7 +50,7 @@
     <string name="something_paypal_title">Paypal</string>
     <string name="something_paypal_summary">Support the developer with PayPal</string>
     <string name="early_donators">Early Donators</string>
-    <string name="SomethingTeams">SomethingOS Team</string>
+    <string name="somethingos_team">SomethingOS Team</string>
     <string name="something_credits">Credits</string>
 
     <!-- Ignore window secure -->
