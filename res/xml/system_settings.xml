@@ -10,10 +10,15 @@
         settings:lottie_rawRes="@raw/somesystem_illustration"
         android:order="-1001" />
 
-
     <PreferenceCategory
         android:key="misc_category"
         android:title="@string/misc_category_title">
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+               android:key="window_ignore_secure"
+               android:title="@string/ignore_window_secure_title"
+               android:summary="@string/ignore_window_secure_summary"
+               android:defaultValue="false"/>
 
         <SwitchPreference
             android:key="enable_adblock"
