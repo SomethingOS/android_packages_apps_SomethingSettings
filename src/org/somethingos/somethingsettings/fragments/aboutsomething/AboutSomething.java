@@ -40,6 +40,7 @@ public class AboutSomething extends SettingsPreferenceFragment implements Prefer
         new Credit("arter97", "The lawnchair vendor we forked", "https://github.com/arter97"),
         new Credit("z-huang", "for Innertune", "https://github.com/z-huang/InnerTune"),
         new Credit("colorata", "for WallMan", "https://gitlab.com/colorata/wallman"),
+        new Credit("That Josh Guy", "His amazing Android Wallpaper", "https://thatjoshguy.me/"),
         new Credit("You", "For using SomethingOS", "https://www.somethingos.com/")
     };
 
