@@ -23,6 +23,11 @@ import java.lang.reflect.Method;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PlayIntegrity extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
@@ -66,6 +71,30 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
         
     }
 
+    public HashMap<String, String> extractProperties(String input) {
+        HashMap<String, String> properties = new HashMap<>();
+        Pattern arrayPattern = Pattern.compile("<string-array name=\"config_certifiedBuildProperties\" translatable=\"false\">(.*?)</string-array>", Pattern.DOTALL);
+        Matcher arrayMatcher = arrayPattern.matcher(input);
+        if (arrayMatcher.find()) {
+            String arrayContents = arrayMatcher.group(1);
+            Pattern itemPattern = Pattern.compile("<item>(.*?)</item>");
+            Matcher itemMatcher = itemPattern.matcher(arrayContents);
+            while (itemMatcher.find()) {
+                String item = itemMatcher.group(1);
+                String[] parts = item.split(":");
+                if (parts.length == 2) {
+                    properties.put(parts[0], parts[1]);
+                }
+                else if (parts.length > 2) {
+                    String key = parts[0];
+                    String value = String.join(":", Arrays.copyOfRange(parts, 1, parts.length));
+                    properties.put(key, value);
+                }
+            }
+        }
+        return properties;
+    }
+
     public void setPropertiesFromUrl() {
         new AsyncTask<Void, Void, String>() {    
              
@@ -74,25 +103,28 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
                 StringBuilder keysBuilder = new StringBuilder();
                 String message = "";
                 try {
-                    URL url = new URL("https://raw.githubusercontent.com/HWVSBI/AIHIWB/main/PROPS");
+                    URL url = new URL("https://raw.githubusercontent.com/SomethingOS/android_vendor_aospa/uvite/overlay/AOSPAFrameworksOverlay/res/values/config.xml");
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("GET");
                     BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                     
+                    String content = "";
                     String line;
                     while ((line = reader.readLine()) != null) {
-                        String[] parts = line.split("=");
-                        if (parts.length == 2) {
-                            String key = parts[0];
-                            String value = parts[1];
-                            SystemProperties.set("persist.sys.somethingos.gms." + key, value);
-                            if (keysBuilder.length() > 0) {
-                                keysBuilder.append("+");
-                            }
-                            keysBuilder.append(key);
-                        }
+                        content += line;
                     }
                     reader.close();
+    
+                    HashMap<String, String> properties = extractProperties(content);
+                    for (Map.Entry<String, String> entry : properties.entrySet()) {
+                        String key = entry.getKey();
+                        String value = entry.getValue();
+                        SystemProperties.set("persist.sys.somethingos.gms." + key, value);
+                        if (keysBuilder.length() > 0) {
+                            keysBuilder.append("+");
+                        }
+                        keysBuilder.append(key);
+                    }
                     SystemProperties.set("persist.sys.somethingos.gms.list", keysBuilder.toString());
                     message = "Applied properties, you should pass Play Integrity.";
                 } catch (Exception e) {
@@ -101,7 +133,7 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
                 }
                 return message;
             }
-
+    
             @Override
             protected void onPostExecute(String message) {
                 killGmsProcess();
