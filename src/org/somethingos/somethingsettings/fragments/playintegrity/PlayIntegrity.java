@@ -138,8 +138,26 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
             protected void onPostExecute(String message) {
                 killGmsProcess();
                 Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+                reloadPreferences();
             }
         }.execute();
+    }
+
+    public void reloadPreferences() {
+        PreferenceCategory fingerprintCategory = findPreference("play_fingeprint_category");
+        fingerprintCategory.removeAll();
+        String keysList = SystemProperties.get("persist.sys.somethingos.gms.list");
+        String[] keys = keysList.split("\\+");
+    
+        for (String key : keys) {
+            String value = SystemProperties.get("persist.sys.somethingos.gms." + key);
+            Preference preference = new Preference(getPreferenceManager().getContext());
+            preference.setKey(key);
+            preference.setTitle(key);
+            preference.setSummary(value);
+            preference.setSelectable(false);
+            fingerprintCategory.addPreference(preference);
+        }
     }
 
     public void killGmsProcess() {
