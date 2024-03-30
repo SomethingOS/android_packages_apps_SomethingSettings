@@ -43,14 +43,8 @@
 
     <PreferenceCategory
         android:key="something_team"
-        android:title="@string/SomethingTeams">
+        android:title="@string/somethingos_team">
 
-        <!-- We definitly needs to find a cleaner way than hardcoding donators-->
-        <Preference
-            android:title="Dylan AKPINAR"
-            android:summary="Founder &amp; Lead Developer"
-            android:key="dylanakp"
-        />
     </PreferenceCategory>
 
     <PreferenceCategory

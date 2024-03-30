@@ -31,6 +31,10 @@ public class AboutSomething extends SettingsPreferenceFragment implements Prefer
         "Sehmee2"
     };
 
+    private static final Credit[] somethingOSTeam = {
+        new Credit("Dylan AKPINAR", "Founder and Lead Developer", "http://www.github.com/DylanAkp")
+    };
+
     //List of credits
     private static final Credit[] credits = {
         new Credit("Google", "Keep improving Android", "https://android.com"),
@@ -67,7 +71,6 @@ public class AboutSomething extends SettingsPreferenceFragment implements Prefer
         setUrlPreferenceClickListener("something_twitter", "http://www.twitter.com/SomethingOS");
         setUrlPreferenceClickListener("something_donate", "http://www.buymeacoffee.com/SomethingOS");
         setUrlPreferenceClickListener("something_donate2", "https://www.somethingos.com/paypal");
-        setUrlPreferenceClickListener("dylanakp", "http://www.github.com/DylanAkp");
 
         // Set the early donators
         PreferenceCategory earlyDonatorsCategory = findPreference("something_early_donators");
@@ -75,6 +78,18 @@ public class AboutSomething extends SettingsPreferenceFragment implements Prefer
             Preference donatorPreference = new Preference(getContext());
             donatorPreference.setTitle(donator);
             earlyDonatorsCategory.addPreference(donatorPreference);
+        }
+
+        // Set the SomethingOS team
+        PreferenceCategory somethingTeamCategory = findPreference("something_team");
+        for (Credit teamMember : somethingOSTeam) {
+            Preference teamMemberPreference = new Preference(getContext());
+            teamMemberPreference.setTitle(teamMember.title);
+            teamMemberPreference.setSummary(teamMember.description);
+            teamMemberPreference.setOnPreferenceClickListener(preference -> {
+                return openUrl(teamMember.link);
+            });
+            somethingTeamCategory.addPreference(teamMemberPreference);
         }
 
         // Set the credits
