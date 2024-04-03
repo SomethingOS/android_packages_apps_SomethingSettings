@@ -10,6 +10,13 @@
         settings:lottie_rawRes="@raw/somesystem_illustration"
         android:order="-1001" />
 
+    <Preference
+        android:key="batteryprofiles_something"
+        android:title="@string/batteryprofiles_something_title"
+        android:summary="@string/batteryprofiles_something_summary"
+        android:fragment="org.somethingos.somethingsettings.fragments.system.batteryprofiles.BatteryProfiles"
+        android:icon="@drawable/ic_battery" />
+
     <PreferenceCategory
         android:key="misc_category"
         android:title="@string/misc_category_title">

@@ -30,6 +30,20 @@
     <string name="misc_category_title">Miscellaneous</string>
     <string name="enable_adblock_summary">Block ads in apps and websites, this will override your DNS settings</string>
 
+    <!-- Battery Profiles -->
+    <string name="batteryprofiles_something_title">Battery Profiles</string>
+    <string name="batteryprofiles_something_summary">Customize your battery profiles</string>
+    <string name="bt_profile_default_title">Default</string>
+    <string name="bt_profile_default_summary">Use the device\'s default idle settings</string>
+    <string name="bt_profile_light_title">Light</string>
+    <string name="bt_profile_light_summary">Does not affect day-to-day usage</string>
+    <string name="bt_profile_moderate_title">Moderate</string>
+    <string name="bt_profile_moderate_summary">Additional savings with slightly less timely notifications</string>
+    <string name="bt_profile_high_title">High</string>
+    <string name="bt_profile_high_summary">A state of deep sleep where background processes and checks are delayed</string>
+    <string name="bt_profile_extreme_title">Extreme</string>
+    <string name="bt_profile_extreme_summary">Save as much power as possible with large sacrifices to background work</string>
+
     <!-- UI -->
     <string name="lockscreen_category_title">Lockscreen</string>
     <string name="something_ui_dashboard_title">Interface</string>

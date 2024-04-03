@@ -43,6 +43,7 @@ public class AboutSomething extends SettingsPreferenceFragment implements Prefer
         new Credit("Lawnchair Team", "They made Lawnchair, the default launcher in SomethingOS", "https://lawnchair.app"),
         new Credit("Goooler", "The Lawnchair Fork we use", "https://github.com/Goooler"),
         new Credit("arter97", "The lawnchair vendor we forked", "https://github.com/arter97"),
+        new Credit("tytydraco", "Comatose inspired battery profiles", "https://github.com/tytydraco/Comatose"),
         new Credit("z-huang", "for Innertune", "https://github.com/z-huang/InnerTune"),
         new Credit("colorata", "for WallMan", "https://gitlab.com/colorata/wallman"),
         new Credit("zhanghai", "for MaterialFiles", "https://github.com/zhanghai/MaterialFiles"),

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/something_play_integrity_dashboard_title">
+
+    <Preference
+        android:icon="@drawable/ic_battery"
+        android:key="battery_profile_default"
+        android:title="@string/bt_profile_default_title"
+        android:summary="@string/bt_profile_default_summary"/>
+
+    <Preference
+        android:icon="@drawable/ic_battery"
+        android:key="battery_profile_light"
+        android:title="@string/bt_profile_light_title"
+        android:summary="@string/bt_profile_light_summary"/>
+
+    <Preference
+        android:icon="@drawable/ic_battery"
+        android:key="battery_profile_moderate"
+        android:title="@string/bt_profile_moderate_title"
+        android:summary="@string/bt_profile_moderate_summary"/>
+
+    <Preference
+        android:icon="@drawable/ic_battery"
+        android:key="battery_profile_high"
+        android:title="@string/bt_profile_high_title"
+        android:summary="@string/bt_profile_high_summary"/>
+
+    <Preference
+        android:icon="@drawable/ic_battery"
+        android:key="battery_profile_extreme"
+        android:title="@string/bt_profile_extreme_title"
+        android:summary="@string/bt_profile_extreme_summary"/>
+
+</PreferenceScreen>
