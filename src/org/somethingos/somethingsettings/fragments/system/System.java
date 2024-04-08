@@ -32,17 +32,24 @@ public class System extends SettingsPreferenceFragment implements Preference.OnP
 
         SwitchPreference enableAdblock = (SwitchPreference) findPreference("enable_adblock");
         if (enableAdblock != null) {
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext().getApplicationContext());
-            boolean enableAdblockValue = prefs.getBoolean("enable_adblock", false);
-            enableAdblock.setChecked(enableAdblockValue);
-
-            enableAdblock.setOnPreferenceChangeListener((preference, newValue) -> {
-                boolean isChecked = (Boolean) newValue;
-                prefs.edit().putBoolean("enable_adblock", isChecked).apply();
-                dnsHandler(isChecked);
-                return true;
-            });
+            AdSwitchHandler(enableAdblock);
         }
+    }
+
+    private void AdSwitchHandler(SwitchPreference enableAdblock) {
+        String dnsSpecifier = Settings.Global.getString(
+            getContext().getContentResolver(),
+            Settings.Global.PRIVATE_DNS_SPECIFIER
+        );
+
+        boolean enableAdblockValue = "dns.adguard.com".equals(dnsSpecifier);
+        enableAdblock.setChecked(enableAdblockValue);
+
+        enableAdblock.setOnPreferenceChangeListener((preference, newValue) -> {
+            boolean isChecked = (Boolean) newValue;
+            dnsHandler(isChecked);
+            return true;
+        });
     }
 
     private void dnsHandler(boolean isChecked) {
