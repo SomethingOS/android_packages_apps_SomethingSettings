@@ -2,6 +2,11 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Volume panel to left -->
+    <string name="volume_panel_title">Volume panel</string>
+    <string name="volume_panel_on_left_title">Show volume panel on left</string>
+    <string name="volume_panel_on_left_summary">Display volume panel on the left side of the screen</string>
+
     <!-- SomethingOS Settings -->
     <string name="somethingos_dashboard_title">SomethingOS</string>
 
