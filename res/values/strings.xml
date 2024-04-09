@@ -34,6 +34,8 @@
     <string name="enable_adblock_title">Block ads</string>
     <string name="misc_category_title">Miscellaneous</string>
     <string name="enable_adblock_summary">Block ads in apps and websites, this will override your DNS settings</string>
+    <string name="app_downgrade_title">Allow package downgrade</string>
+    <string name="app_downgrade_summary">Allow installation of lower version of an app</string>
 
     <!-- UI -->
     <string name="lockscreen_category_title">Lockscreen</string>

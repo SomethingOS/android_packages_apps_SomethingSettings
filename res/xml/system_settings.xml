@@ -20,6 +20,12 @@
                android:summary="@string/ignore_window_secure_summary"
                android:defaultValue="false"/>
 
+        <co.aospa.framework.preference.GlobalSettingSwitchPreference
+               android:key="pm_downgrade_allowed"
+               android:title="@string/app_downgrade_title"
+               android:summary="@string/app_downgrade_summary"
+               android:defaultValue="false"/>
+
         <SwitchPreference
             android:key="enable_adblock"
             android:title="@string/enable_adblock_title"
