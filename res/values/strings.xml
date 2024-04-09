@@ -27,6 +27,7 @@
     <string name="spoof_gapps_summary">Spoof Google Apps to have Pixel exclusives features</string>
     <string name="spoof_games">Spoof Games</string>
     <string name="spoof_games_summary">Spoof device according to partnerships to unlock higher FPS in some games</string>
+    <string name="spoofing_footer_summary">Apps may needs to be closed once after enabling spoofing.</string>
 
     <!-- System --> 
 
