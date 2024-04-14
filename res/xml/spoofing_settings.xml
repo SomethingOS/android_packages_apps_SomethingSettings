@@ -10,6 +10,14 @@
         settings:lottie_rawRes="@raw/spoofing_illustration"
         android:order="-1001" />
 
+    <Preference
+        android:key="hide_developer_status_settings"
+        android:icon="@drawable/ic_devstatus"
+        android:title="@string/hide_developer_status_title"
+        android:summary="@string/hide_developer_status_summary"
+        android:fragment="com.android.settings.security.HideDeveloperStatusSettings"
+        settings:controller="com.android.settings.security.HideDeveloperStatusPreferenceController" />
+
     <SwitchPreference
         android:key="spoof_gphotos"
         android:title="@string/spoof_gphotos"

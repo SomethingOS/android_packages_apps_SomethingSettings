@@ -29,6 +29,13 @@
     <string name="spoof_games_summary">Spoof device according to partnerships to unlock higher FPS in some games</string>
     <string name="spoofing_footer_summary">Apps may needs to be closed once after enabling spoofing.</string>
 
+    <!-- Hide developer status -->
+    <string name="hide_developer_status_title">Hide developer status</string>
+    <string name="hide_developer_status_summary">Hide developer status from apps</string>
+    <string name="search">Search</string>
+    <string name="search_apps">Search apps</string>
+    <string name="dev_category">Dev options</string>
+
     <!-- System --> 
 
     <string name="something_system_dashboard_title">System</string>
@@ -37,6 +44,7 @@
     <string name="enable_adblock_summary">Block ads in apps and websites, this will override your DNS settings</string>
     <string name="app_downgrade_title">Allow package downgrade</string>
     <string name="app_downgrade_summary">Allow installation of lower version of an app</string>
+
 
     <!-- UI -->
     <string name="lockscreen_category_title">Lockscreen</string>
