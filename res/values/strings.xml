@@ -47,6 +47,8 @@
 
 
     <!-- UI -->
+    <string name="quick_settings_category">QS panel</string>
+    <string name="statusnar_category">Status Bar</string>
     <string name="lockscreen_category_title">Lockscreen</string>
     <string name="something_ui_dashboard_title">Interface</string>
     <string name="hide_qs_on_secure_lockscreen_title">Hide QS on secure lockscreen</string>
@@ -54,6 +56,7 @@
     <string name="bootanimation_title">Boot Animation</string>
     <string name="bootanimation_dialog_title">Choose a Boot Animation</string>
     <string name="bootanimation_category_title">Boot Animation</string>
+    <string name="statusbar_category">Status Bar</string>
 
     <!-- About Something -->
     <string name="about_something_title">About</string>
@@ -76,4 +79,12 @@
     <string name="ignore_window_secure_title">Ignore window secure flags</string>
     <string name="ignore_window_secure_summary">Remove screenshot and screenrecord limits for all apps. This can be convenient in some cases but may lead to privacy leaks.</string>
 
+    <!-- Network traffic -->
+    <string name="network_traffic_state_title">Network traffic indicator</string>
+    <string name="network_traffic_state_summary">Enable or disable network speed indicator in status bar</string>
+    <string name="network_traffic_title">Network traffic indicator</string>
+    <string name="network_traffic_master_switch_title">Use Network Traffic Indicator</string>
+    <string name="network_options_title">Options</string>
+    <string name="network_traffic_autohide_title">Hide network traffic indicator if inactive</string>
+    <string name="network_traffic_autohide_summary">Hide when network traffic indicator is below 1 KB/s</string>
 </resources>
