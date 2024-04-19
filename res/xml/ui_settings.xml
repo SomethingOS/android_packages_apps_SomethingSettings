@@ -11,6 +11,20 @@
         android:order="-1001" />
 
     <PreferenceCategory
+        android:key="bootanimation_category"
+        android:title="@string/bootanimation_category_title">
+
+        <ListPreference
+        android:key="bootanimation"
+        android:title="@string/bootanimation_title"
+        android:entries="@array/bootanimation_names"
+        android:entryValues="@array/bootanimation_values"
+        android:defaultValue="somethingos"
+        android:dialogTitle="@string/bootanimation_dialog_title"/>
+
+    </PreferenceCategory>
+    
+    <PreferenceCategory
         android:key="lockscreen_category"
         android:title="@string/lockscreen_category_title">
 

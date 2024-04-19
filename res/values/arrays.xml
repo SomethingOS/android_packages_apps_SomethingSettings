@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string-array name="bootanimation_names">
+        <item>SomethingOS</item>
+        <item>Googlish</item>
+        <item>Dot</item>
+        <item>Pixel</item>
+    </string-array>
+    <string-array name="bootanimation_values">
+        <item>somethingos</item>
+        <item>googlish</item>
+        <item>dot</item>
+        <item>pixel</item>
+    </string-array>
+
+</resources>

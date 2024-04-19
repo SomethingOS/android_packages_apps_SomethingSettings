@@ -2,21 +2,30 @@ package org.somethingos.somethingsettings.fragments.ui;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.provider.Settings;
 import android.content.SharedPreferences;
 import androidx.preference.PreferenceManager;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
+import androidx.preference.ListPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-
 public class UI extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+
+    private ListPreference bootanimationPreference;
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        return false;
+        String key = preference.getKey();
+        if ("bootanimation".equals(key)) {
+            String newBootanimation = (String) newValue;
+            SystemProperties.set("persist.sys.somethingos.bootanimation", (String) newValue);
+            preference.setSummary(newBootanimation);
+        }
+        return true;
     }
 
     @Override
@@ -29,6 +38,15 @@ public class UI extends SettingsPreferenceFragment implements Preference.OnPrefe
         setPreferencesFromResource(R.xml.ui_settings, rootKey);
 
         getActivity().setTitle(R.string.something_ui_dashboard_title);
+        
+        bootanimationPreference = findPreference("bootanimation");
+        String bootanimationProp = SystemProperties.get("persist.sys.somethingos.bootanimation");
+
+        if (bootanimationPreference != null) {
+            bootanimationPreference.setOnPreferenceChangeListener(this);
+            bootanimationPreference.setValue(bootanimationProp);
+            bootanimationPreference.setSummary(bootanimationProp);
+        }
 
         SwitchPreference hideQSonSecureLockscreen = (SwitchPreference) findPreference("secure_lockscreen_qs_disabled");
 
