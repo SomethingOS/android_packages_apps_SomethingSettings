@@ -54,8 +54,8 @@
     <string name="hide_qs_on_secure_lockscreen_title">Hide QS on secure lockscreen</string>
     <string name="hide_qs_on_secure_lockscreen_summary">Hide Quick Settings while device is locked</string>
     <string name="bootanimation_title">Boot Animation</string>
-    <string name="bootanimation_dialog_title">Choose a Boot Animation</string>
     <string name="bootanimation_category_title">Boot Animation</string>
+    <string name="preview_category_title">Preview</string>
     <string name="statusbar_category">Status Bar</string>
 
     <!-- About Something -->

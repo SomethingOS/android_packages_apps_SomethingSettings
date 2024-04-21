@@ -19,12 +19,6 @@ public class UI extends SettingsPreferenceFragment implements Preference.OnPrefe
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        String key = preference.getKey();
-        if ("bootanimation".equals(key)) {
-            String newBootanimation = (String) newValue;
-            SystemProperties.set("persist.sys.somethingos.bootanimation", (String) newValue);
-            preference.setSummary(newBootanimation);
-        }
         return true;
     }
 
@@ -38,15 +32,6 @@ public class UI extends SettingsPreferenceFragment implements Preference.OnPrefe
         setPreferencesFromResource(R.xml.ui_settings, rootKey);
 
         getActivity().setTitle(R.string.something_ui_dashboard_title);
-        
-        bootanimationPreference = findPreference("bootanimation");
-        String bootanimationProp = SystemProperties.get("persist.sys.somethingos.bootanimation");
-
-        if (bootanimationPreference != null) {
-            bootanimationPreference.setOnPreferenceChangeListener(this);
-            bootanimationPreference.setValue(bootanimationProp);
-            bootanimationPreference.setSummary(bootanimationProp);
-        }
 
         SwitchPreference hideQSonSecureLockscreen = (SwitchPreference) findPreference("secure_lockscreen_qs_disabled");
 

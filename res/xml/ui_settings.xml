@@ -14,13 +14,11 @@
         android:key="bootanimation_category"
         android:title="@string/bootanimation_category_title">
 
-        <ListPreference
-        android:key="bootanimation"
-        android:title="@string/bootanimation_title"
-        android:entries="@array/bootanimation_names"
-        android:entryValues="@array/bootanimation_values"
-        android:defaultValue="somethingos"
-        android:dialogTitle="@string/bootanimation_dialog_title"/>
+        <Preference
+            android:key="bootanimation_preference"
+            android:title="@string/bootanimation_title"
+            android:fragment="org.somethingos.somethingsettings.fragments.ui.bootanimation.BootAnimation"
+            android:icon="@drawable/ic_bootanimation" />
 
     </PreferenceCategory>
     
