@@ -20,7 +20,8 @@
 
     <!-- Spoofing -->
     <string name="something_spoofing_dashboard_title">Spoofing</string>
-    <string name="google_category_title">Google</string>
+    <string name="tools_category_title">Tools</string>
+    <string name="spoof_category_title">Google</string>
     <string name="spoof_gphotos">Google Photos Unlimited</string>
     <string name="spoof_gphotos_summary">Spoof device as a Pixel XL for unlimited Google Photos backup</string>
     <string name="spoof_gapps">Spoof Google Apps</string>

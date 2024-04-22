@@ -9,32 +9,43 @@
         android:key="spoofing_illustration"
         settings:lottie_rawRes="@raw/spoofing_illustration"
         android:order="-1001" />
+    
+    <PreferenceCategory
+        android:key="tools_category"
+        android:title="@string/tools_category_title">
 
-    <Preference
-        android:key="hide_developer_status_settings"
-        android:icon="@drawable/ic_devstatus"
-        android:title="@string/hide_developer_status_title"
-        android:summary="@string/hide_developer_status_summary"
-        android:fragment="com.android.settings.security.HideDeveloperStatusSettings"
-        settings:controller="com.android.settings.security.HideDeveloperStatusPreferenceController" />
+        <Preference
+            android:key="hide_developer_status_settings"
+            android:icon="@drawable/ic_devstatus"
+            android:title="@string/hide_developer_status_title"
+            android:summary="@string/hide_developer_status_summary"
+            android:fragment="com.android.settings.security.HideDeveloperStatusSettings"
+            settings:controller="com.android.settings.security.HideDeveloperStatusPreferenceController" />
+    </PreferenceCategory>
 
-    <SwitchPreference
-        android:key="spoof_gphotos"
-        android:title="@string/spoof_gphotos"
-        android:summary="@string/spoof_gphotos_summary"
-        android:defaultValue="true" />
+    <PreferenceCategory
+        android:key="spoof_apps_category"
+        android:title="@string/spoof_category_title">
 
-    <SwitchPreference
-        android:key="spoof_google_apps"
-        android:title="@string/spoof_gapps"
-        android:summary="@string/spoof_gapps_summary"
-        android:defaultValue="true" />
+        <SwitchPreference
+            android:key="spoof_gphotos"
+            android:title="@string/spoof_gphotos"
+            android:summary="@string/spoof_gphotos_summary"
+            android:defaultValue="true" />
 
-    <SwitchPreference
-        android:key="spoof_games"
-        android:title="@string/spoof_games"
-        android:summary="@string/spoof_games_summary"
-        android:defaultValue="true" />
+        <SwitchPreference
+            android:key="spoof_google_apps"
+            android:title="@string/spoof_gapps"
+            android:summary="@string/spoof_gapps_summary"
+            android:defaultValue="true" />
+
+        <SwitchPreference
+            android:key="spoof_games"
+            android:title="@string/spoof_games"
+            android:summary="@string/spoof_games_summary"
+            android:defaultValue="true" />
+        
+    </PreferenceCategory>
 
     <com.android.settingslib.widget.FooterPreference
         android:key="spoofing_footer"
