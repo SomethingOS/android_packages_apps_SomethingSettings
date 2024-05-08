@@ -24,6 +24,20 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="power_menu_category"
+        android:title="@string/power_menu_category_title">
+
+        <co.aospa.framework.preference.SecureSettingListPreference
+            android:key="power_menu_type"
+            android:title="@string/power_menu_type_title"
+            android:summary="%s"
+            android:dialogTitle="@string/power_menu_type_title"
+            android:entries="@array/power_menu_type_entries"
+            android:entryValues="@array/power_menu_type_values"
+            android:defaultValue="0" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="statusbar_category"
         android:title="@string/statusbar_category_title">
 
