@@ -13,7 +13,7 @@
     <PreferenceCategory
         android:id="@+id/bootanimation_category"
         android:key="bootanimation_category"
-        android:title="@string/bootanimation_category_title">
+        android:title="@string/bootanimation_title">
         
         <ListPreference
             android:key="bootanimation_preference"

@@ -20,8 +20,6 @@
 
     <!-- Spoofing -->
     <string name="something_spoofing_dashboard_title">Spoofing</string>
-    <string name="tools_category_title">Tools</string>
-    <string name="spoof_category_title">Google</string>
     <string name="spoof_gphotos">Google Photos Unlimited</string>
     <string name="spoof_gphotos_summary">Spoof device as a Pixel XL for unlimited Google Photos backup</string>
     <string name="spoof_gapps">Spoof Google Apps</string>
@@ -49,13 +47,11 @@
 
     <!-- UI -->
     <string name="quick_settings_category">QS panel</string>
-    <string name="statusnar_category">Status Bar</string>
     <string name="lockscreen_category_title">Lockscreen</string>
     <string name="something_ui_dashboard_title">Interface</string>
     <string name="hide_qs_on_secure_lockscreen_title">Hide QS on secure lockscreen</string>
     <string name="hide_qs_on_secure_lockscreen_summary">Hide Quick Settings while device is locked</string>
     <string name="bootanimation_title">Boot Animation</string>
-    <string name="bootanimation_category_title">Boot Animation</string>
     <string name="preview_category_title">Preview</string>
     <string name="statusbar_category">Status Bar</string>
 
@@ -82,7 +78,6 @@
 
     <!-- Network traffic -->
     <string name="network_traffic_state_title">Network traffic indicator</string>
-    <string name="network_traffic_state_summary">Enable or disable network speed indicator in status bar</string>
     <string name="network_traffic_title">Network traffic indicator</string>
     <string name="network_traffic_master_switch_title">Use Network Traffic Indicator</string>
     <string name="network_options_title">Options</string>

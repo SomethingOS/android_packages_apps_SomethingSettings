@@ -10,29 +10,18 @@
         settings:lottie_rawRes="@raw/custom_illustration"
         android:order="-1001" />
 
-    <PreferenceCategory
-        android:key="bootanimation_category"
-        android:title="@string/bootanimation_category_title">
-
-        <Preference
-            android:key="bootanimation_preference"
-            android:title="@string/bootanimation_title"
-            android:fragment="org.somethingos.somethingsettings.fragments.ui.bootanimation.BootAnimation"
-            android:icon="@drawable/ic_bootanimation" />
-
-    </PreferenceCategory>
+    <Preference
+        android:key="bootanimation_preference"
+        android:title="@string/bootanimation_title"
+        android:fragment="org.somethingos.somethingsettings.fragments.ui.bootanimation.BootAnimation"
+        android:icon="@drawable/ic_bootanimation" />
     
-    <PreferenceCategory
-        android:key="statusbar_category"
-        android:title="@string/statusbar_category">
-
-        <Preference
+    <Preference
         android:key="network_traffic_state"
         android:title="@string/network_traffic_state_title"
-        android:summary="@string/network_traffic_state_summary"
         android:fragment="org.somethingos.somethingsettings.fragments.networktraffic.NetworkTrafficSettings"
+        android:icon="@drawable/ic_network_traffic"
         android:defaultValue="false" />
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="lockscreen_category"
