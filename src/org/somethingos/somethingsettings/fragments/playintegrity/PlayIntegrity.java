@@ -30,6 +30,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PlayIntegrity extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+    private static final String PROP_PREFIX = "persist.sys.somethingos.gms.";
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -56,11 +57,11 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
         }
 
         PreferenceCategory fingerprintCategory = findPreference("play_fingeprint_category");
-        String keysList = SystemProperties.get("persist.sys.somethingos.gms.list");
+        String keysList = SystemProperties.get(PROP_PREFIX + "list");
         String[] keys = keysList.split("\\+");
 
         for (String key : keys) {
-            String value = SystemProperties.get("persist.sys.somethingos.gms." + key);
+            String value = SystemProperties.get(PROP_PREFIX + key);
             Preference preference = new Preference(getPreferenceManager().getContext());
             preference.setKey(key);
             preference.setTitle(key);
@@ -71,61 +72,24 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
         
     }
 
-    public HashMap<String, String> extractProperties(String input) {
-        HashMap<String, String> properties = new HashMap<>();
-        Pattern arrayPattern = Pattern.compile("<string-array name=\"config_certifiedBuildProperties\" translatable=\"false\">(.*?)</string-array>", Pattern.DOTALL);
-        Matcher arrayMatcher = arrayPattern.matcher(input);
-        if (arrayMatcher.find()) {
-            String arrayContents = arrayMatcher.group(1);
-            Pattern itemPattern = Pattern.compile("<item>(.*?)</item>");
-            Matcher itemMatcher = itemPattern.matcher(arrayContents);
-            while (itemMatcher.find()) {
-                String item = itemMatcher.group(1);
-                String[] parts = item.split(":");
-                if (parts.length == 2) {
-                    properties.put(parts[0], parts[1]);
-                }
-                else if (parts.length > 2) {
-                    String key = parts[0];
-                    String value = String.join(":", Arrays.copyOfRange(parts, 1, parts.length));
-                    properties.put(key, value);
-                }
-            }
-        }
-        return properties;
-    }
-
     public void setPropertiesFromUrl() {
-        new AsyncTask<Void, Void, String>() {    
-             
+        new AsyncTask<Void, Void, String>() {
             @Override
             protected String doInBackground(Void... voids) {
-                StringBuilder keysBuilder = new StringBuilder();
                 String message = "";
                 try {
-                    URL url = new URL("https://raw.githubusercontent.com/SomethingOS/android_vendor_aospa/uvite/overlay/AOSPAFrameworksOverlay/res/values/config.xml");
+                    URL url = new URL("https://gitlab.com/somethingos/android_vendor_something_certification/-/raw/universal/certification.prop");
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("GET");
                     BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                    
-                    String content = "";
+
                     String line;
                     while ((line = reader.readLine()) != null) {
-                        content += line;
+                        if (line.startsWith(PROP_PREFIX)) {
+                            SystemProperties.set(line.split("=")[0], line.split("=")[1]);
+                        }
                     }
                     reader.close();
-    
-                    HashMap<String, String> properties = extractProperties(content);
-                    for (Map.Entry<String, String> entry : properties.entrySet()) {
-                        String key = entry.getKey();
-                        String value = entry.getValue();
-                        SystemProperties.set("persist.sys.somethingos.gms." + key, value);
-                        if (keysBuilder.length() > 0) {
-                            keysBuilder.append("+");
-                        }
-                        keysBuilder.append(key);
-                    }
-                    SystemProperties.set("persist.sys.somethingos.gms.list", keysBuilder.toString());
                     message = "Applied properties, you should pass Play Integrity.";
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -133,7 +97,7 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
                 }
                 return message;
             }
-    
+
             @Override
             protected void onPostExecute(String message) {
                 killGmsProcess();
@@ -146,11 +110,11 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
     public void reloadPreferences() {
         PreferenceCategory fingerprintCategory = findPreference("play_fingeprint_category");
         fingerprintCategory.removeAll();
-        String keysList = SystemProperties.get("persist.sys.somethingos.gms.list");
+        String keysList = SystemProperties.get(PROP_PREFIX + "list");
         String[] keys = keysList.split("\\+");
     
         for (String key : keys) {
-            String value = SystemProperties.get("persist.sys.somethingos.gms." + key);
+            String value = SystemProperties.get(PROP_PREFIX + key);
             Preference preference = new Preference(getPreferenceManager().getContext());
             preference.setKey(key);
             preference.setTitle(key);
