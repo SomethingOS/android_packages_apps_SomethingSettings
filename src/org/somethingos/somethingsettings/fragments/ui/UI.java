@@ -32,33 +32,5 @@ public class UI extends SettingsPreferenceFragment implements Preference.OnPrefe
         setPreferencesFromResource(R.xml.ui_settings, rootKey);
 
         getActivity().setTitle(R.string.something_ui_dashboard_title);
-
-        SwitchPreference hideQSonSecureLockscreen = (SwitchPreference) findPreference("secure_lockscreen_qs_disabled");
-
-        if (hideQSonSecureLockscreen != null) {
-            setHideQSonSecureLockscreen(hideQSonSecureLockscreen);
-        }
-    }
-
-    private void setHideQSonSecureLockscreen(SwitchPreference hideQSonSecureLockscreen) {
-        int currentValue = Settings.System.getIntForUser(
-            getContext().getContentResolver(),
-            Settings.System.SECURE_LOCKSCREEN_QS_DISABLED,
-            0,
-            android.os.UserHandle.USER_CURRENT
-        );
-        hideQSonSecureLockscreen.setChecked(currentValue != 0);
-
-        hideQSonSecureLockscreen.setOnPreferenceChangeListener((preference, newValue) -> {
-            boolean isChecked = (Boolean) newValue;
-            int value = isChecked ? 1 : 0;
-            Settings.System.putIntForUser(
-                getContext().getContentResolver(),
-                Settings.System.SECURE_LOCKSCREEN_QS_DISABLED,
-                value,
-                android.os.UserHandle.USER_CURRENT
-            );
-            return true;
-        });
     }
 }

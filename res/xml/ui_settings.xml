@@ -24,17 +24,6 @@
         android:defaultValue="false" />
 
     <PreferenceCategory
-        android:key="lockscreen_category"
-        android:title="@string/lockscreen_category_title">
-
-        <SwitchPreference
-            android:key="secure_lockscreen_qs_disabled"
-            android:title="@string/hide_qs_on_secure_lockscreen_title"
-            android:summary="@string/hide_qs_on_secure_lockscreen_summary"/>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="volume_panel_category"
         android:title="@string/volume_panel_title">
 

@@ -46,11 +46,7 @@
 
 
     <!-- UI -->
-    <string name="quick_settings_category">QS panel</string>
-    <string name="lockscreen_category_title">Lockscreen</string>
     <string name="something_ui_dashboard_title">Interface</string>
-    <string name="hide_qs_on_secure_lockscreen_title">Hide QS on secure lockscreen</string>
-    <string name="hide_qs_on_secure_lockscreen_summary">Hide Quick Settings while device is locked</string>
     <string name="bootanimation_title">Boot Animation</string>
     <string name="preview_category_title">Preview</string>
     <string name="statusbar_category">Status Bar</string>
