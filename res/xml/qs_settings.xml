@@ -1,0 +1,27 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/something_quick_settings_dashboard_title">
+
+    <PreferenceCategory
+          android:title="@string/qs_show_brightness_slider_title">
+
+          <co.aospa.framework.preference.SecureSettingListPreference
+               android:key="qs_show_brightness_slider"
+               android:title="@string/qs_show_brightness_slider_title"
+               android:entries="@array/qs_show_brightness_slider_entries"
+               android:entryValues="@array/qs_show_brightness_slider_values"
+               android:defaultValue="1" />
+
+          <co.aospa.framework.preference.SecureSettingListPreference
+               android:key="qs_brightness_slider_position"
+               android:dependency="qs_show_brightness_slider"
+               android:title="@string/qs_brightness_slider_position_title"
+               android:entries="@array/qs_brightness_slider_position_entries"
+               android:entryValues="@array/qs_brightness_slider_position_values"
+               android:defaultValue="0" />
+
+     </PreferenceCategory>
+
+</PreferenceScreen>

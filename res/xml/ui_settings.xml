@@ -15,6 +15,12 @@
         android:title="@string/bootanimation_title"
         android:fragment="org.somethingos.somethingsettings.fragments.ui.bootanimation.BootAnimation"
         android:icon="@drawable/ic_bootanimation" />
+
+    <Preference
+        android:key="quick_settings"
+        android:title="@string/something_quick_settings_dashboard_title"
+        android:fragment="org.somethingos.somethingsettings.fragments.ui.qs.QuickSettings"
+        android:icon="@drawable/ic_qs" />
     
     <Preference
         android:key="network_traffic_state"
@@ -22,26 +28,6 @@
         android:fragment="org.somethingos.somethingsettings.fragments.networktraffic.NetworkTrafficSettings"
         android:icon="@drawable/ic_network_traffic"
         android:defaultValue="false" />
-
-    <PreferenceCategory
-          android:title="@string/qs_show_brightness_slider_title">
-
-          <co.aospa.framework.preference.SecureSettingListPreference
-               android:key="qs_show_brightness_slider"
-               android:title="@string/qs_show_brightness_slider_title"
-               android:entries="@array/qs_show_brightness_slider_entries"
-               android:entryValues="@array/qs_show_brightness_slider_values"
-               android:defaultValue="1" />
-
-          <co.aospa.framework.preference.SecureSettingListPreference
-               android:key="qs_brightness_slider_position"
-               android:dependency="qs_show_brightness_slider"
-               android:title="@string/qs_brightness_slider_position_title"
-               android:entries="@array/qs_brightness_slider_position_entries"
-               android:entryValues="@array/qs_brightness_slider_position_values"
-               android:defaultValue="0" />
-
-     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="volume_panel_category"
