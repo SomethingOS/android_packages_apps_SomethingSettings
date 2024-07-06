@@ -17,6 +17,7 @@
         <Preference
             android:icon="@drawable/ic_update"
             android:key="play_integrity_update"
+            settings:layout="@layout/something_dashboard_preference_single"
             android:title="@string/play_integrity_update_title"
             android:summary="@string/play_integrity_update_summary" />
 
