@@ -30,13 +30,19 @@
         android:defaultValue="false" />
 
     <PreferenceCategory
-        android:key="volume_panel_category"
-        android:title="@string/volume_panel_title">
+        android:key="misc_ui_category"
+        android:title="@string/misc_category_title">
 
         <co.aospa.framework.preference.SecureSettingSwitchPreference
             android:key="volume_panel_on_left"
             android:title="@string/volume_panel_on_left_title"
             android:summary="@string/volume_panel_on_left_summary"
+            android:defaultValue="false" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="new_settings_layout"
+            android:title="@string/new_settings_layout"
+            android:summary="@string/new_settings_layout_summary"
             android:defaultValue="false" />
 
     </PreferenceCategory>

@@ -53,6 +53,8 @@
     <string name="bootanimation_title">Boot Animation</string>
     <string name="preview_category_title">Preview</string>
     <string name="statusbar_category">Status Bar</string>
+    <string name="new_settings_layout">Android 15-like Settings Homepage</string>
+    <string name="new_settings_layout_summary">Enable the new Android 15-like Settings Homepage</string>
 
     <!-- About Something -->
     <string name="about_something_title">About</string>
