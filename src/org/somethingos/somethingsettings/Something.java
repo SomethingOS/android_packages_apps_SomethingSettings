@@ -42,7 +42,7 @@ public class Something extends SettingsPreferenceFragment {
 
     private void onSetPrefCard() {
         final boolean newDesign = Settings.Secure.getInt(getContext().getContentResolver(),
-                Settings.Secure.NEW_SETTINGS_LAYOUT, 0) == 1;
+                Settings.Secure.NEW_SETTINGS_LAYOUT, 1) == 1;
         final PreferenceScreen screen = getPreferenceScreen();
         final int count = screen.getPreferenceCount();
         for (int i = 0; i < count; i++) {

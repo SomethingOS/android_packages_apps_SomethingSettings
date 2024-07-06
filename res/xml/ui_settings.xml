@@ -43,7 +43,7 @@
             android:key="new_settings_layout"
             android:title="@string/new_settings_layout"
             android:summary="@string/new_settings_layout_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 
