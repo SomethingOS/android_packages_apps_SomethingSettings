@@ -11,7 +11,6 @@
 
     <Preference
         android:key="pintegrity_category"
-        settings:layout="@layout/something_dashboard_preference_top"
         android:title="@string/something_play_integrity_dashboard_title"
         android:summary="@string/play_integrity_summary"
         android:fragment="org.somethingos.somethingsettings.fragments.playintegrity.PlayIntegrity"
@@ -19,7 +18,6 @@
 
     <Preference
         android:key="spoofing_category"
-        settings:layout="@layout/something_dashboard_preference_middle"
         android:title="@string/something_spoofing_dashboard_title"
         android:summary="@string/spoofing_summary"
         android:fragment="org.somethingos.somethingsettings.fragments.spoofing.Spoofing"
@@ -27,7 +25,6 @@
 
     <Preference
         android:key="ui_category"
-        settings:layout="@layout/something_dashboard_preference_middle"
         android:title="@string/something_ui_dashboard_title"
         android:summary="@string/something_ui_summary"
         android:fragment="org.somethingos.somethingsettings.fragments.ui.UI"
@@ -35,7 +32,6 @@
 
     <Preference
         android:key="system_category"
-        settings:layout="@layout/something_dashboard_preference_middle"
         android:title="@string/something_system_dashboard_title"
         android:summary="@string/something_system_summary"
         android:fragment="org.somethingos.somethingsettings.fragments.system.System"
@@ -43,7 +39,6 @@
 
     <Preference
         android:key="about_something"
-        settings:layout="@layout/something_dashboard_preference_bottom"
         android:title="@string/about_something_title"
         android:fragment="org.somethingos.somethingsettings.fragments.aboutsomething.AboutSomething"
         android:icon="@drawable/ic_aboutsomething" />

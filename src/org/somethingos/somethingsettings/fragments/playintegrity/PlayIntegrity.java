@@ -55,7 +55,7 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
             });
         }
 
-        PreferenceCategory fingerprintCategory = findPreference("play_fingeprint_category");
+        PreferenceCategory fingerprintCategory = findPreference("play_fingerprint_category");
         String keysList = SystemProperties.get("persist.sys.somethingos.gms.list");
         String[] keys = keysList.split("\\+");
 
@@ -144,7 +144,7 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
     }
 
     public void reloadPreferences() {
-        PreferenceCategory fingerprintCategory = findPreference("play_fingeprint_category");
+        PreferenceCategory fingerprintCategory = findPreference("play_fingerprint_category");
         fingerprintCategory.removeAll();
         String keysList = SystemProperties.get("persist.sys.somethingos.gms.list");
         String[] keys = keysList.split("\\+");

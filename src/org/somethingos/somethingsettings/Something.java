@@ -21,6 +21,9 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
+import android.provider.Settings;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class Something extends SettingsPreferenceFragment {
@@ -29,11 +32,34 @@ public class Something extends SettingsPreferenceFragment {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.something);
+        onSetPrefCard();
     }
 
     @Override
     public int getMetricsCategory() {
         return 0;
+    }
+
+    private void onSetPrefCard() {
+        final boolean newDesign = Settings.Secure.getInt(getContext().getContentResolver(),
+                Settings.Secure.NEW_SETTINGS_LAYOUT, 0) == 1;
+        final PreferenceScreen screen = getPreferenceScreen();
+        final int count = screen.getPreferenceCount();
+        for (int i = 0; i < count; i++) {
+            final Preference preference = screen.getPreference(i);
+            String key = preference.getKey();
+            if (newDesign) {
+                if (key.equals("pintegrity_category")){
+                    preference.setLayoutResource(R.layout.something_dashboard_preference_top);
+                } else if (key.equals("spoofing_category")
+                    || key.equals("ui_category")
+                    || key.equals("system_category")){
+                    preference.setLayoutResource(R.layout.something_dashboard_preference_middle);
+                } else if (key.equals("about_something")){
+                    preference.setLayoutResource(R.layout.something_dashboard_preference_bottom);
+                }
+            }
+       }
     }
 
     /**
