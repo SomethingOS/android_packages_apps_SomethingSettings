@@ -45,7 +45,8 @@
     <string name="enable_adblock_summary">Block ads in apps and websites, this will override your DNS settings</string>
     <string name="app_downgrade_title">Allow package downgrade</string>
     <string name="app_downgrade_summary">Allow installation of lower version of an app</string>
-
+    <string name="power_menu_advanced_restart_title">Advanced restart</string>
+    <string name="power_menu_advanced_restart_summary">When unlocked, include options in the power menu for restarting into recovery or bootloader</string>
 
     <!-- UI -->
     <string name="something_ui_dashboard_title">Interface</string>

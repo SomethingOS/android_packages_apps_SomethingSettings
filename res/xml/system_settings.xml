@@ -31,6 +31,12 @@
             android:title="@string/enable_adblock_title"
             android:summary="@string/enable_adblock_summary"/>
 
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="advanced_reboot"
+            android:title="@string/power_menu_advanced_restart_title"
+            android:summary="@string/power_menu_advanced_restart_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
