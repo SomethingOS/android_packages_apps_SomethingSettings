@@ -5,12 +5,14 @@
     <string-array name="bootanimation_names">
         <item>SomethingOS</item>
         <item>Googlish</item>
+        <item>Fox</item>
         <item>Dot</item>
         <item>Pixel</item>
     </string-array>
     <string-array name="bootanimation_values">
         <item>somethingos</item>
         <item>googlish</item>
+        <item>fox</item>
         <item>dot</item>
         <item>pixel</item>
     </string-array>

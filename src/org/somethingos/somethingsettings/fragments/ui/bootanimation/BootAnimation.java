@@ -76,6 +76,9 @@ public class BootAnimation extends SettingsPreferenceFragment implements Prefere
             case "googlish":
                 videoPreference.setVideo(R.raw.bootanim_googlish, 0);
                 break;
+            case "fox":
+                videoPreference.setVideo(R.raw.bootanim_fox, 0);
+                break;
             case "dot":
                 videoPreference.setVideo(R.raw.bootanim_dots, 0);
                 break;
