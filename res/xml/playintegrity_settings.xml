@@ -16,6 +16,12 @@
         android:title="@string/play_integrity_update_title"
         android:summary="@string/play_integrity_update_summary" />
 
+    <SwitchPreference
+        android:key="play_integrity_switch"
+        android:title="@string/play_integrity_switch_title"
+        android:summary="@string/play_integrity_switch_summary"
+        android:defaultValue="true" />
+
     <PreferenceCategory
         android:key="play_fingerprint_category"
         android:title="@string/play_fingerprint">

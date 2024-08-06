@@ -12,6 +12,7 @@ import android.os.SystemProperties;
 import androidx.annotation.NonNull;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.SwitchPreference;
 import androidx.preference.PreferenceCategory;
 
 import com.android.settings.R;
@@ -57,6 +58,20 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
         setPreferencesFromResource(R.xml.playintegrity_settings, rootKey);
 
         getActivity().setTitle(R.string.something_play_integrity_dashboard_title);
+
+        SwitchPreference playIntegritySwitch = findPreference("play_integrity_switch");
+
+        if (playIntegritySwitch != null) {
+            boolean isEnabled = SystemProperties.getBoolean("persist.sys.somethingos.gms.enabled", true);
+            playIntegritySwitch.setChecked(isEnabled);
+
+            playIntegritySwitch.setOnPreferenceChangeListener((preference, newValue) -> {
+                boolean isEnabledNew = (Boolean) newValue;
+                SystemProperties.set("persist.sys.somethingos.gms.enabled", isEnabledNew ? "true" : "false");
+                killGmsProcess();
+                return true;
+            });
+        }
 
         Preference setPropertiesPreference = findPreference("play_integrity_update");
         if (setPropertiesPreference != null) {

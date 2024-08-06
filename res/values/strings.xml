@@ -17,6 +17,8 @@
     <string name="play_integrity_update_summary">Apply latest spoof</string>
     <string name="play_update_title">Update</string>
     <string name="play_fingerprint">Spoofed values</string>
+    <string name="play_integrity_switch_title">Enable Play Integrity</string>
+    <string name="play_integrity_switch_summary">Enable or disable Play Integrity spoof</string>
 
     <!-- Spoofing -->
     <string name="something_spoofing_dashboard_title">Spoofing</string>
