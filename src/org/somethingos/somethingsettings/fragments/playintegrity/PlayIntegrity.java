@@ -59,20 +59,6 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
 
         getActivity().setTitle(R.string.something_play_integrity_dashboard_title);
 
-        SwitchPreference playIntegritySwitch = findPreference("play_integrity_switch");
-
-        if (playIntegritySwitch != null) {
-            boolean isEnabled = SystemProperties.getBoolean("persist.sys.somethingos.gms.enabled", true);
-            playIntegritySwitch.setChecked(isEnabled);
-
-            playIntegritySwitch.setOnPreferenceChangeListener((preference, newValue) -> {
-                boolean isEnabledNew = (Boolean) newValue;
-                SystemProperties.set("persist.sys.somethingos.gms.enabled", isEnabledNew ? "true" : "false");
-                killGmsProcess();
-                return true;
-            });
-        }
-
         Preference setPropertiesPreference = findPreference("play_integrity_update");
         if (setPropertiesPreference != null) {
             setPropertiesPreference.setOnPreferenceClickListener(preference -> {
@@ -81,6 +67,8 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
             });
         }
 
+        SwitchPreference playIntegritySwitch = findPreference("play_integrity_switch");
+        SwitchPreference playIntegrityTrickySwitch = findPreference("play_integrity_tricky_switch");
         PreferenceCategory fingerprintCategory = findPreference("play_fingerprint_category");
 
         for (String key : certifiedProps) {
@@ -93,6 +81,30 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
                 preference.setSelectable(false);
                 fingerprintCategory.addPreference(preference);
             }
+        }
+
+        if (playIntegritySwitch != null) {
+            boolean isEnabled = SystemProperties.getBoolean("persist.sys.somethingos.gms.enabled", true);
+            playIntegritySwitch.setChecked(isEnabled);
+          
+            playIntegritySwitch.setOnPreferenceChangeListener((preference, newValue) -> {
+                boolean isEnabledNew = (Boolean) newValue;
+                SystemProperties.set("persist.sys.somethingos.gms.enabled", isEnabledNew ? "true" : "false");
+                killGmsProcess();
+                return true;
+            });
+        }
+
+        if (playIntegrityTrickySwitch != null) {
+            boolean isEnabled = SystemProperties.getBoolean("persist.sys.somethingos.tee.enabled", false);
+            playIntegritySwitch.setChecked(isEnabled);
+
+            playIntegritySwitch.setOnPreferenceChangeListener((preference, newValue) -> {
+                boolean isEnabledNew = (Boolean) newValue;
+                SystemProperties.set("persist.sys.somethingos.tee.enabled", isEnabledNew ? "true" : "false");
+                killGmsProcess();
+                return true;
+            });
         }
     }
 

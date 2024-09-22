@@ -18,8 +18,10 @@
     <string name="play_update_title">Update</string>
     <string name="play_fingerprint">Spoofed values</string>
     <string name="play_integrity_switch_title">Enable Play Integrity</string>
-    <string name="play_integrity_switch_summary">Enable or disable Play Integrity spoof</string>
-
+    <string name="play_options">Options</string>
+    <string name="play_integrity_switch_summary">Enable Play Integrity spoof</string>
+    <string name="play_integrity_tricky_switch_title">Enable Chain of trust</string>
+    <string name="play_integrity_tricky_switch_summary">Things may start to get tricky</string>
     <!-- Spoofing -->
     <string name="something_spoofing_dashboard_title">Spoofing</string>
     <string name="spoofing_summary">Adjust spoofing settings</string>
