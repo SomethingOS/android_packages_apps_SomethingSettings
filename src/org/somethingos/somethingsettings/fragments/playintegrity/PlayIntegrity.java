@@ -97,9 +97,9 @@ public class PlayIntegrity extends SettingsPreferenceFragment implements Prefere
 
         if (playIntegrityTrickySwitch != null) {
             boolean isEnabled = SystemProperties.getBoolean("persist.sys.somethingos.tee.enabled", false);
-            playIntegritySwitch.setChecked(isEnabled);
+            playIntegrityTrickySwitch.setChecked(isEnabled);
 
-            playIntegritySwitch.setOnPreferenceChangeListener((preference, newValue) -> {
+            playIntegrityTrickySwitch.setOnPreferenceChangeListener((preference, newValue) -> {
                 boolean isEnabledNew = (Boolean) newValue;
                 SystemProperties.set("persist.sys.somethingos.tee.enabled", isEnabledNew ? "true" : "false");
                 killGmsProcess();
