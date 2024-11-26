@@ -4,10 +4,16 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/something_interface_title">
 
-    <co.aospa.framework.preference.GlobalSettingSwitchPreference
-      android:key="pm_downgrade_allowed"
-      android:title="@string/app_downgrade_title"
-      android:summary="@string/app_downgrade_summary"
-      android:defaultValue="false" />
+    <PreferenceCategory
+      android:key="app_category"
+      android:title="@string/app_category">
+
+      <co.aospa.framework.preference.GlobalSettingSwitchPreference
+        android:key="pm_downgrade_allowed"
+        android:title="@string/app_downgrade_title"
+        android:summary="@string/app_downgrade_summary"
+        android:defaultValue="false" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
