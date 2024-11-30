@@ -19,6 +19,10 @@
     <string name="bootanimation_title">Boot Animation</string>
     <string name="bootanimation_summary">Customize your bootanimation</string>
     <string name="preview_category_title">Preview</string>
+    <!-- Interface / Navbar -->
+    <string name="navbar_category_title">Navigation bar</string>
+    <string name="navbar_visibility_title">Navigation bar visibility</string>
+    <string name="navbar_visibility_summary">Show the navigation bar</string>
 
     <!-- System Options -->
     <string name="app_category">Applications</string>
