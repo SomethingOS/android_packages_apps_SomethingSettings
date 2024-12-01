@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/something_play_integrity_dashboard_title">
+
+    <Preference
+        android:key="play_integrity_update"
+        settings:layout="@layout/something_update_pref"
+        android:title="@string/play_integrity_update_title"
+        android:summary="@string/play_integrity_update_summary" />
+        
+    <PreferenceCategory
+        android:key="play_options"
+        android:title="@string/play_options">
+
+        <SwitchPreference
+            android:key="play_integrity_switch"
+            android:title="@string/play_integrity_switch_title"
+            android:summary="@string/play_integrity_switch_summary"
+            android:defaultValue="true" />
+        
+        <SwitchPreference
+            android:key="play_integrity_tricky_switch"
+            android:title="@string/play_integrity_tricky_switch_title"
+            android:summary="@string/play_integrity_tricky_switch_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="play_fingerprint_category"
+        android:title="@string/play_fingerprint">
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

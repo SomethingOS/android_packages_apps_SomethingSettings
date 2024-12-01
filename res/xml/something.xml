@@ -29,6 +29,7 @@
         android:title="@string/something_simulation_title"
         android:summary="@string/something_simulation_summary" 
         android:icon="@drawable/ic_simulation"
+        android:fragment="org.somethingos.somethingsettings.fragments.simulation.SimulationSettings"
     />
 
     <Preference

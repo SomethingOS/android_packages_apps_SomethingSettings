@@ -31,6 +31,24 @@
     <string name="ignore_window_secure_title">Ignore window secure flags</string>
     <string name="ignore_window_secure_summary">Remove screenshot and screenrecord limits for all apps. This can be convenient in some cases but may lead to privacy leaks.</string>
 
+    <!-- Simulation -->
+    <string name="google_category">Google</string>
+    <string name="gphotos_title">Unlimited Google Photos</string>
+    <string name="gphotos_summary">Simulate a Pixel XL to get unlimited storage</string>
+    <string name="gapps_title">Google Apps</string>
+    <string name="gapps_summary">Simulate the latest Pixel on Google apps</string>
+    <!-- Integrity -->
+    <string name="something_play_integrity_dashboard_title">Play Integrity</string>
+    <string name="play_integrity_summary">Adjust Play Integrity settings</string>
+    <string name="play_integrity_update_title">Update Play Integrity</string>
+    <string name="play_integrity_update_summary">Apply latest spoof</string>
+    <string name="play_update_title">Update</string>
+    <string name="play_fingerprint">Spoofed values</string>
+    <string name="play_integrity_switch_title">Enable Play Integrity</string>
+    <string name="play_options">Options</string>
+    <string name="play_integrity_switch_summary">Enable Play Integrity spoof</string>
+    <string name="play_integrity_tricky_switch_title">Disable Chain of trust</string>
+    <string name="play_integrity_tricky_switch_summary">Will return unsupported for Key Attestation</string>
 
     <!-- About Something -->
     <string name="about_something_title">About</string>
