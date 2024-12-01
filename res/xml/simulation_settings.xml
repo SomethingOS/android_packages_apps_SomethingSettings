@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/something_simulation_title">
+
+    <PreferenceCategory
+      android:key="google_category"
+      android:title="@string/google_category">
+
+      <Preference
+        android:key="pintegrity_category"
+        android:title="@string/something_play_integrity_dashboard_title"
+        android:summary="@string/play_integrity_summary"
+        android:fragment="org.somethingos.somethingsettings.fragments.simulation.PlayIntegrity"
+        android:icon="@drawable/ic_playintegrity" />
+
+			<SwitchPreference
+        android:key="gphotos_switch"
+        android:title="@string/gphotos_title"
+        android:summary="@string/gphotos_summary"
+        android:defaultValue="false" />
+
+      <SwitchPreference
+        android:key="gapps_switch"
+        android:title="@string/gapps_title"
+        android:summary="@string/gapps_summary"
+        android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
