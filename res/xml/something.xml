@@ -32,12 +32,12 @@
         android:fragment="org.somethingos.somethingsettings.fragments.simulation.SimulationSettings"
     />
 
-    <Preference
+    <!-- <Preference
         android:key="something_extensions"
         android:title="@string/something_extensions_title"
         android:summary="@string/something_extensions_summary"
         android:icon="@drawable/ic_extension"
-    />
+    /> -->
 
     <Preference
         android:key="about_something"
