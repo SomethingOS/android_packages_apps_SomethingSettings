@@ -24,6 +24,11 @@
             android:entries="@array/power_menu_type_entries"
             android:entryValues="@array/power_menu_type_values"
             android:defaultValue="0" />
+
+        <Preference
+            android:key="power_menu"
+            android:title="@string/power_menu_title"
+            android:fragment="org.somethingos.somethingsettings.fragments.ui.PowerMenuActions" />
     </PreferenceCategory>
 
     <PreferenceCategory
