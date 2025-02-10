@@ -122,14 +122,6 @@
     <string name="power_menu_type_classic">Classic (A8)</string>
     <string name="power_menu_type_grid">Grid</string>
     <string name="power_menu_type_legacy">Legacy (A7)</string>
-
-    <!-- Button settings - Power menu -->
-    <string name="power_menu_type_title">Power menu style</string>
-    <string name="power_menu_type_lite">Lite (A12)</string>
-    <string name="power_menu_type_full">Full (A11)</string>
-    <string name="power_menu_type_classic">Classic (A8)</string>
-    <string name="power_menu_type_grid">Grid</string>
-    <string name="power_menu_type_legacy">Legacy (A7)</string>
     <string name="power_menu_title">Power menu</string>
     <string name="power_menu_items_title">Power menu items</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
@@ -147,5 +139,9 @@
 
     <!-- Text shown for the title of the restart systemui option -->
     <string name="power_menu_restart_systemui_title">Restart SystemUI</string>
+
+    <!-- Global Actions -->
+    <string name="global_actions_advanced_reboot_title">Advanced restart</string>
+    <string name="global_actions_advanced_reboot_summary">Show options for recovery and bootloader in power menu</string>
 
 </resources>
