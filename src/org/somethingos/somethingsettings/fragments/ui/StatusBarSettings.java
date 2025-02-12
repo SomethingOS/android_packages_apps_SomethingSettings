@@ -5,7 +5,6 @@
  */
 package org.somethingos.somethingsettings.fragments.ui;
 
-import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.content.Intent;
 import android.os.BatteryManager;
@@ -128,7 +127,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
 
     @Override
     public int getMetricsCategory() {
-        return SettingsEnums.MOBILE_NETWORK;
+        return -1;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
