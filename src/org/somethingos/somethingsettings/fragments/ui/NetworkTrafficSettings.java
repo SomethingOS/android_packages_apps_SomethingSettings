@@ -184,6 +184,6 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
 
     @Override
     public int getMetricsCategory() {
-        return SettingsEnums.MOBILE_NETWORK;
+        return -1;
     }
 }
